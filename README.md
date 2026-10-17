@@ -1,2 +1,3 @@
-# bmp02_bulk
-Bulk RNA-Seq Workflow 
+# Bulk RNA-Seq Analysis Workflow
+
+- Download the data: install **fastq-dl**

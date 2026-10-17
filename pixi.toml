@@ -1,0 +1,11 @@
+[workspace]
+channels = ["conda-forge", "bioconda"]
+name = "bmp03_bulk"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+fastq-dl = ">=4.0.1,<5"
+fastqc = ">=0.13.0,<0.14"
