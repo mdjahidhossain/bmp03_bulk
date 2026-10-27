@@ -9,3 +9,5 @@ version = "0.1.0"
 [dependencies]
 fastq-dl = ">=4.0.1,<5"
 fastqc = ">=0.13.0,<0.14"
+salmon = ">=2.8.0,<3"
+multiqc = ">=1.35,<2"
