@@ -11,8 +11,8 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 PROJECT_DIR=$(dirname "$SCRIPT_DIR")
 
 FASTQ_DIR="${PROJECT_DIR}/fastq"
-QC_DIR="${PROJECT_DIR}/outputs/qc"
-FASTQC_DIR="${QC_DIR}/fastqc"
+QC_DIR="${PROJECT_DIR}/outputs"
+FASTQC_DIR="${QC_DIR}"
 THREADS=${THREADS:-8}
 
 mkdir -p "$FASTQC_DIR"
@@ -28,9 +28,9 @@ if [[ ${#fastq_files[@]} -eq 0 ]]; then
 fi
 
 echo "Running FastQC on ${#fastq_files[@]} files with ${THREADS} threads..."
-fastqc --threads "$THREADS" -o "$FASTQC_DIR" "${fastq_files[@]}"
+fastqc --threads "$THREADS" --outdir "$FASTQC_DIR" "${fastq_files[@]}"
 
 echo "Running MultiQC..."
-multiqc --force "$FASTQC_DIR" -o "$QC_DIR"
+multiqc --force "$FASTQC_DIR" --ignore "*multiqc*" --outdir "$QC_DIR"
 
 echo "Quality check complete! Reports saved in ${QC_DIR}"

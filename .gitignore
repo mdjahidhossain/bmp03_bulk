@@ -225,3 +225,17 @@ __marimo__/
 .pixi/*
 !.pixi/config.toml
 wget-log
+
+# Bulk RNA-seq reference files
+inputs/*.fa
+inputs/*.fa.gz
+inputs/*.fasta
+inputs/*.fasta.gz
+inputs/decoys.txt
+inputs/human_salmon_index*/
+
+# Generated analysis results
+outputs/
+results/
+
+# Accidental files containing carriage returns
